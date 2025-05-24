@@ -274,19 +274,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // وظيفة تنزيل PDF
-    downloadPdfBtn.addEventListener('click', () => {
-        const element = cvPreviewArea;
-        const opt = {
-            margin: 0.5,
-            filename: 'السيرة-الذاتية.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
-            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-        };
+downloadPdfBtn.addEventListener('click', () => {
+    const element = cvPreviewArea; // العنصر المستهدف الذي سيتم تحويله إلى PDF
 
-        // استخدام html2pdf لإنشاء وتنزيل ملف PDF
+    // إعدادات html2pdf المتقدمة
+    const opt = {
+        margin: [0.5, 0.5, 0.5, 0.5], // الهوامش (أعلى، يمين، أسفل، يسار) بالبوصة
+        filename: 'السيرة-الذاتية.pdf', // اسم ملف PDF عند التنزيل
+        image: { type: 'jpeg', quality: 0.98 }, // نوع وجودة الصورة الملتقطة من HTML
+        html2canvas: { // هذا هو الجزء المهم: إعدادات مكتبة html2canvas
+            scale: 3,                 // مقياس العرض لزيادة الجودة (كلما زاد الرقم زادت الجودة وحجم الملف)
+            logging: true,            // لتفعيل رسائل السجل في Console المتصفح (مفيد للتشخيص)
+            dpi: 192,                 // نقطة في البوصة (كلما زادت زادت جودة الصورة الملتقطة)
+            letterRendering: true,    // محاولة الحفاظ على عرض الخطوط بوضوح
+            useCORS: true,            // السماح بتحميل الموارد عبر نطاقات مختلفة
+            scrollY: -window.scrollY, // ضبط موضع الالتقاط إذا كانت الصفحة قد تم التمرير فيها
+
+            // هذه هي الخيارات الجديدة والمهمة لتحسين عرض الخطوط والمحتوى المعقد:
+            allowTaint: true,
+            foreignObjectRendering: true
+        },
+        jsPDF: { // إعدادات مكتبة jsPDF التي تقوم بإنشاء ملف PDF الفعلي
+            unit: 'in',        // وحدة القياس (بوصة)
+            format: 'letter',  // حجم الصفحة (رسالة أمريكية)
+            orientation: 'portrait' // اتجاه الصفحة (عمودي)
+        }
+    };
+
+    // استخدام html2pdf لإنشاء وتنزيل ملف PDF
+    // إضافة تأخير (setTimeout) لضمان أن جميع العناصر قد تم تحميلها وتنسيقها قبل الالتقاط
+    setTimeout(() => {
         html2pdf().set(opt).from(element).save();
-    });
+    }, 1500); // 1.5 ثانية تأخير (يمكن زيادته إذا استمرت المشكلة)
+});
 
     // تحديث المعاينة الأولية عند تحميل الصفحة
     updatePreview();

@@ -1,13 +1,13 @@
 /* تنسيقات عامة */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Noto Sans Arabic', sans-serif; /* تم تغيير الخط هنا */
     margin: 0;
     padding: 0;
     background-color: #f4f7f6;
     color: #333;
     line-height: 1.6;
-    direction: rtl; /* لضمان اتجاه النص من اليمين لليسار */
-    text-align: right; /* لمحاذاة النص لليمين افتراضيا */
+    direction: rtl;
+    text-align: right;
 }
 
 header {
