@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منشئ السيرة الذاتية العصرية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>منشئ السيرة الذاتية العصرية</h1>
+        <p>أنشئ سيرتك الذاتية الاحترافية والجاذبة في دقائق!</p>
+    </header>
+
+    <main>
+        <section class="input-section">
+            <h2>1. أدخل معلوماتك</h2>
+
+            <fieldset>
+                <legend>معلومات شخصية</legend>
+                <div class="form-group">
+                    <label for="name">الاسم الكامل:</label>
+                    <input type="text" id="name" placeholder="مثال: أحمد محمد" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">المسمى الوظيفي المطلوب:</label>
+                    <input type="text" id="title" placeholder="مثال: مهندس برمجيات">
+                </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني:</label>
+                    <input type="email" id="email" placeholder="مثال: your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف:</label>
+                    <input type="tel" id="phone" placeholder="مثال: +971 50 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="linkedin">رابط LinkedIn:</label>
+                    <input type="url" id="linkedin" placeholder="مثال: https://linkedin.com/in/yourprofile">
+                </div>
+                <div class="form-group">
+                    <label for="github">رابط GitHub (اختياري):</label>
+                    <input type="url" id="github" placeholder="مثال: https://github.com/yourusername">
+                </div>
+                <div class="form-group">
+                    <label for="summary">ملخص شخصي:</label>
+                    <textarea id="summary" rows="5" placeholder="اكتب ملخصًا قصيرًا عن خبراتك وأهدافك المهنية..."></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>التعليم</legend>
+                <div id="education-entries">
+                    <div class="education-entry">
+                        <div class="form-group">
+                            <label for="degree-1">الدرجة العلمية:</label>
+                            <input type="text" class="degree" placeholder="مثال: بكالوريوس في علوم الحاسوب">
+                        </div>
+                        <div class="form-group">
+                            <label for="university-1">الجامعة/المؤسسة:</label>
+                            <input type="text" class="university" placeholder="مثال: جامعة دبي">
+                        </div>
+                        <div class="form-group">
+                            <label for="edu-dates-1">السنوات:</label>
+                            <input type="text" class="edu-dates" placeholder="مثال: 2018 - 2022">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="add-education">إضافة تعليم</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>الخبرات المهنية</legend>
+                <div id="experience-entries">
+                    <div class="experience-entry">
+                        <div class="form-group">
+                            <label for="job-title-1">المسمى الوظيفي:</label>
+                            <input type="text" class="job-title" placeholder="مثال: مطور ويب">
+                        </div>
+                        <div class="form-group">
+                            <label for="company-1">الشركة:</label>
+                            <input type="text" class="company" placeholder="مثال: شركة البرمجة المحدودة">
+                        </div>
+                        <div class="form-group">
+                            <label for="job-dates-1">السنوات:</label>
+                            <input type="text" class="job-dates" placeholder="مثال: 2022 - حتى الآن">
+                        </div>
+                        <div class="form-group">
+                            <label for="job-desc-1">وصف المهام والإنجازات:</label>
+                            <textarea class="job-description" rows="3" placeholder="اذكر المسؤوليات الرئيسية والإنجازات..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="add-experience">إضافة خبرة</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>المهارات</legend>
+                <div class="form-group">
+                    <label for="skills">المهارات (افصل بينها بفاصلة):</label>
+                    <input type="text" id="skills" placeholder="مثال: JavaScript, React, Python, SQL">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>اللغات</legend>
+                <div class="form-group">
+                    <label for="languages">اللغات (افصل بينها بفاصلة):</label>
+                    <input type="text" id="languages" placeholder="مثال: العربية (اللغة الأم), الإنجليزية (ممتاز)">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>المشاريع/أعمال إضافية (اختياري)</legend>
+                <div id="project-entries">
+                    <div class="project-entry">
+                        <div class="form-group">
+                            <label for="project-name-1">اسم المشروع:</label>
+                            <input type="text" class="project-name" placeholder="مثال: تطبيق إدارة المهام">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-link-1">رابط المشروع (اختياري):</label>
+                            <input type="url" class="project-link" placeholder="مثال: https://yourproject.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-desc-1">وصف المشروع:</label>
+                            <textarea class="project-description" rows="3" placeholder="وصف موجز للمشروع ودورك فيه..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="add-project">إضافة مشروع</button>
+            </fieldset>
+
+        </section>
+
+        <section class="template-section">
+            <h2>2. اختر قالبًا</h2>
+            <div class="templates-grid">
+                <div class="template-option active" data-template="modern">
+                    <h3>قالب عصري</h3>
+                    <p>تصميم نظيف وجذاب مع تركيز على الأيقونات.</p>
+                </div>
+                <div class="template-option" data-template="classic">
+                    <h3>قالب كلاسيكي</h3>
+                    <p>تصميم تقليدي واحترافي، سهل القراءة.</p>
+                </div>
+                </div>
+        </section>
+
+        <section class="preview-section">
+            <h2>3. معاينة وتصدير</h2>
+            <div id="cv-preview" class="cv-preview-area modern-template">
+                <div class="cv-header">
+                    <h1 id="preview-name"></h1>
+                    <p id="preview-title"></p>
+                    <div class="contact-info">
+                        <span id="preview-email"><i class="fas fa-envelope"></i> </span>
+                        <span id="preview-phone"><i class="fas fa-phone"></i> </span>
+                        <span id="preview-linkedin"><i class="fab fa-linkedin"></i> <a href="#" target="_blank"></a></span>
+                        <span id="preview-github"><i class="fab fa-github"></i> <a href="#" target="_blank"></a></span>
+                    </div>
+                </div>
+
+                <div class="cv-body">
+                    <div class="cv-section summary">
+                        <h2>ملخص</h2>
+                        <p id="preview-summary"></p>
+                    </div>
+
+                    <div class="cv-section education">
+                        <h2>التعليم</h2>
+                        <ul id="preview-education">
+                            </ul>
+                    </div>
+
+                    <div class="cv-section experience">
+                        <h2>الخبرة المهنية</h2>
+                        <ul id="preview-experience">
+                            </ul>
+                    </div>
+
+                    <div class="cv-section skills">
+                        <h2>المهارات</h2>
+                        <ul id="preview-skills">
+                            </ul>
+                    </div>
+
+                    <div class="cv-section languages">
+                        <h2>اللغات</h2>
+                        <ul id="preview-languages">
+                            </ul>
+                    </div>
+
+                    <div class="cv-section projects" style="display: none;">
+                        <h2>المشاريع</h2>
+                        <ul id="preview-projects">
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            <button id="download-pdf">تنزيل بصيغة PDF</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 منشئ السيرة الذاتية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>
